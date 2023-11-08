@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #boundary{
+            width:400px;
+            height:550px;
+            margin:auto;
+            border: 1px solid grey;
+        }
+        h1{
+            color:green;
+            text-align: center;
+        }
+        #display{
+            height: 60px;
+            width:350px;
+            border:3px solid black;
+            border-radius: 10px;
+            margin :auto;
+            text-align: right;
+    font-size: 30px;
+    line-height: 2;
+    padding-right: 10px;
+        }
+        
+        #tabs{
+            display:grid;
+            grid-template-columns: repeat(4,78px);
+            grid-template-rows: repeat(4,75px);
+            gap: 10px;
+            justify-content: center;
+            border-radius: 20px;
+
+        }
+        .display{
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="boundary">
+        <h1>Masai Calculator</h1>
+        
+        </br>
+        <div id="display"></div>
+    </br>
+        <div id="tabs">
+            <button class="keys">1</button>
+            <button class="keys">2</button>
+            <button class="keys">3</button>
+            <button class="opt" style="background-color: black; color:white">+</button>
+            <button class="keys">4</button>
+            <button class="keys">5</button>
+            <button class="keys">6</button>
+            <button class="opt" style="background-color: black; color:white">-</button>
+            <button class="keys">7</button>
+            <button class="keys">8</button>
+            <button class="keys">9</button>
+            <button class="opt" style="background-color: black; color:white">*</button>
+            <button class="c" style="background-color: red; color:white">C</button>
+            <button class="keys">0</button>
+            <button class="equal" style="background-color: black; color:white">=</button>
+            <button class="opt" style="background-color: black; color:white" >/</button>
+        </div>
+    
+    </div>
+    
+</body>
+</html>
+<script>
+    let keypad=document.querySelectorAll(".keys")
+    let head=document.getElementById("display")
+    let head1=document.getElementById("display")
+    let operator=document.querySelectorAll(".opt")
+    let eq=document.getElementsByClassName("equal")[0]
+    
+    let isFirstNumber=true
+    let secondNumber=""
+    let operat=""
+    let firstNumber="";
+    for(let i=0;i<keypad.length;i++)
+    {
+        keypad[i].addEventListener('click',function(){
+            if(isFirstNumber==true)
+            {
+                firstNumber+=keypad[i].innerText
+                head.innerText=firstNumber
+                
+            }
+            else
+            {
+                secondNumber+=keypad[i].innerText
+                head.innerText=secondNumber
+
+            }
+
+        })
+    }
+    for(let i=0;i<operator.length;i++)
+    {
+        operator[i].addEventListener('click',function(){
+            isFirstNumber=false
+            operat=operator[i].innerText
+        })
+
+    }
+    function calculate(firstNumber,secondNumber,operat)
+    {
+        switch(operat)
+        {
+            case "+":
+                return Number(firstNumber)+Number(secondNumber);
+            case "-":
+                return Number(firstNumber)-Number(secondNumber);
+            case "*":
+                return Number(firstNumber)*Number(secondNumber);
+            case "/":
+                return Number(firstNumber)/Number(secondNumber);
+        }
+    }
+    console.log(eq)
+    eq.addEventListener('click',function()
+    {
+        let a=calculate(firstNumber,secondNumber,operat)
+        console.log(a)
+        head.innerText=calculate(firstNumber,secondNumber,operat)
+    })
+</script>
