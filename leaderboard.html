@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main
+        {
+            display:flex;
+            height:200px;
+            width:400px;
+            /* border: 1px solid green; */
+            margin:auto;
+        }
+        #sub1{
+            height:auto;
+            width:50%;
+            /* border:1px solid red; */
+            margin:10px;
+        }
+        #sub2{
+            height:auto;
+            width:50%;
+            /* border:1px solid orange; */
+            margin:10px;
+        }
+        .part1{
+            height:75%;
+            width:100%;
+            border:3px solid black;
+            background-color: red;
+            line-height:130px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .par1{
+            height:75%;
+            width:100%;
+            border:3px solid black;
+            background-color: green;
+            line-height:130px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .part2{
+            height:25%;
+            width:100%;
+            /* border:3px solid grey; */
+            text-align: center;
+            font-size: 20px;
+            padding-top: 10px;
+        }
+        .par2{
+            height:25%;
+            width:100%;
+            /* border:3px solid grey; */
+            text-align: center;
+            font-size: 20px;
+            padding-top: 10px;
+        }
+        #scor
+        {
+            width:200px;
+            height:120px;
+            margin: auto;
+            border:3px solid black;
+            background-color: grey;
+            text-align: center;
+            line-height:120px;
+            font-size: 35px;
+        }
+        #tabs{
+            justify-content: center;
+            display:grid;
+            grid-template-columns: repeat(3,60px);
+            grid-template-rows: repeat(4,60px);
+            gap:10px;
+        }
+        #zero
+        {
+            text-align: center;
+            height: 60px;
+            width:60px;
+            margin:auto;
+        }
+        #ent{
+            height:120px;
+            width:200px;
+            background-color: black;
+            color:white;
+            font-size: 35px;
+            justify-content: center ;
+        }
+        #cen
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="sub1">
+            <div class="part1">43</div>
+            <div class="part2">MIN</div>
+        </div>
+        <div id="sub2">
+            <div class="par1">2019</div>
+            <div class="par2">MAX</div>
+        </div>
+    </div>
+    <h1><center>SCORE</center></h1>
+    <div id="scor">#
+    </div>
+    <br>
+    <div id="tabs">
+        <button class="keys" style="background-color: green;">1</button>
+        <button class="keys" style="background-color: orange;">2</button>
+        <button class="keys" style="background-color: green;">3</button>
+        <button class="keys" style="background-color: orange;">4</button>
+        <button class="keys" style="background-color: orange;">5</button>
+        <button class="keys" style="background-color: orange;">6</button>
+        <button class="keys" style="background-color: green;">7</button>
+        <button class="keys" style="background-color: orange;">8</button>
+        <button class="keys" style="background-color: green;">9</button>
+        <button class="keys" style="background-color: violet;">0</button>
+    </div>
+    <br>
+    <div id="cen"><button id="ent" onclick="fun()" >Enter</button></div>
+    
+    
+</body>
+</html>
+<script>
+    let keypad=document.querySelectorAll(".keys")
+    let sc=document.getElementById("scor")
+    let minimum=document.querySelector(".part1")
+    let maximum=document.querySelector(".par1")
+    let num=""
+    for(let i=0;i<keypad.length;i++)
+    {
+        keypad[i].addEventListener('click',function(){
+            num+=keypad[i].innerText
+            sc.innerText=num
+        })
+    }
+    function fun()
+    {if (Number(num)<Number(minimum.innerText))
+    {
+        minimum.innerText=num
+    }
+    if (Number(num)>Number(maximum.innerText))
+    {
+        maximum.innerText=num
+    }
+    sc.innerText="#"
+}
+    
+
+</script>
