@@ -1,6 +1,7 @@
 let text=document.getElementById("innerText")
+let count=0
 function begin(){
-    let count=0
+    
     id=setInterval(()=>{
         let hr=Math.floor(Number(count)/3600)
         let min=Math.floor((Number(count)%3600)/60)
@@ -12,6 +13,7 @@ function begin(){
 }
 function pause(){
     clearInterval(id)
+
 }
 
 function reset(){
