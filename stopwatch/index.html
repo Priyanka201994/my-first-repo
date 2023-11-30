@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width:250px;
+            height:270px;
+            border:2px solid blue;
+        }
+        #box1{
+            height:60%;
+            width:100%;
+            text-align: center;
+            /*border:2px solid red*/
+        }
+        #box2{
+            height:30%;
+            width:90%;
+            text-align: center;
+            padding:10px;
+            /*border: 2px solid green;*/
+
+        }
+        button{
+            height:50px;
+            width:70px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box1"><h1 id="innerText"><center>0:0:0</center></h1></div>
+        <div id="box2">
+            <button id="start" onclick="begin()" >start</button>
+            <button id="stop" onclick="pause()">pause</button>
+            <button id="reset" onclick="reset()">reset</button>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+<script src="stopwatch.js"></script>
