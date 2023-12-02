@@ -18,5 +18,7 @@ function pause(){
 
 function reset(){
     pause()
-    text.innerText=0
+    text.innerText=0 +":"+0+":" +0
+    count=0
+    
 }
