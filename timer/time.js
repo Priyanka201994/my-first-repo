@@ -30,7 +30,7 @@ function pause() {
 }
 function reset() {
   clearInterval(id);
-  inText.innerText = 0 + ":" + 0 + ":" + 0;
+  // inText.innerText = 0 + ":" + 0 + ":" + 0;
   document.getElementById("hr").value=0;
   document.getElementById("min").value=0;
   document.getElementById("sec").value=0;
