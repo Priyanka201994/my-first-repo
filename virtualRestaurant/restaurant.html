@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       img{
+        height:300px;
+        width:300px;
+       }
+       #cont
+       {
+        display:flex;
+        justify-content: space-between;
+       }
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <h1>Menu</h1>
+        <h1 id="orderNo">orderID</h1>
+    </div>
+    
+    <div id="menu">
+        <input type="checkbox" class="dishes" value="0">Pizza</br>
+        <input type="checkbox" class="dishes" value="1">Burger</br>
+        <input type="checkbox" class="dishes" value="2">Hot dog</br>
+        <input type="checkbox" class="dishes" value="3">French fries</br>
+        <input type="checkbox" class="dishes" value="4">Sausage Burito</br>
+        <input type="checkbox" class="dishes" value="5">Drinks</br>
+    </div>
+    <br>
+    <button onclick="orderFood()">Order Food</button>
+    <div><center><img id="images" src="" alt=""></center></div>
+    
+
+</body>
+</html>
+<script src="restau.js"></script>
