@@ -11,8 +11,7 @@ let id
 let orderNo=document.getElementById("orderNo")
 function orderFood()
 {
-    order+=1
-    orderNo.innerText=order
+    
     let promise1=new Promise(function(resolve,reject){
         setTimeout(resolve,(Math.round(Math.random()*3))*1000)
     })
@@ -22,17 +21,27 @@ function orderFood()
         executeOrder()
     })
  console.log("restaurant")
+ 
 }
 function executeOrder(){
     let food=[]
+    let count=0
     clearInterval(id)
     document.querySelectorAll('[type="checkbox"]').forEach(item=>{
         if(item.checked===true)
         {
             // image.setAttribute('src',arr[Number(item.value)])
+            count+=1
             food.push(item.value)
         }
     })
+    if (count==0)
+    {
+        order=order-1
+        alert("Please choose your food")
+    }
+    order+=1
+    orderNo.innerText="Order ID "+order
     console.log(food)
     let curr=0
     //image.setAttribute('src',arr[curr])
@@ -41,5 +50,5 @@ function executeOrder(){
         
         image.setAttribute('src',arr[(food[curr])])
         curr=(curr+1)%food.length
-    },2000)
+    },3000)
 }
